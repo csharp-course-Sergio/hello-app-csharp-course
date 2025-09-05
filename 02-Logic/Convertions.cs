@@ -1,6 +1,6 @@
 partial class Program
 {
-    static void Conversions()
+    static void Convertion()
     {
         int number = 42;
         double decimalNumber = number;
@@ -18,8 +18,10 @@ partial class Program
 
         double anotherDecimal2 = 50.8;
         int convertedNumber = Convert.ToInt32(anotherDecimal2);
-        WriteLine(convertedNumber);
+        WriteLine(convertedNumber); // Redondea
         int castedNumber = (int)anotherDecimal2;
-        WriteLine(castedNumber);
+        WriteLine(castedNumber); // Trunca
+
+
     }
 }
