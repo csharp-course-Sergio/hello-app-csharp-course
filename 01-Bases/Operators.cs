@@ -1,0 +1,29 @@
+partial class Program
+{
+    static void Operators()
+    {
+        int number = 12;
+
+        bool isEven = number % 2 == 0;
+        bool isGreaterThanTen = number > 10;
+
+        if (isEven && isGreaterThanTen)
+        {
+            WriteLine($"El número {number} es par y mayor que 10");
+        }
+        else if (!isEven && isGreaterThanTen)
+        {
+            WriteLine($"El número {number} es impar y mayor que 10");
+        }
+        else
+        {
+            WriteLine($"El número {number} no cumple con las condiciones");
+        }
+
+        int age = 15;
+
+        string category = age > 18 ? "Adulto" : "Menor";
+        WriteLine(category);
+
+    }
+}
