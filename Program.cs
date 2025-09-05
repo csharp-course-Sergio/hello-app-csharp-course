@@ -2,6 +2,6 @@
 {
     static void Main(string[] args)
     {
-        Functions();
+        PrintFactorialTable(number: 10);
     }
 }
