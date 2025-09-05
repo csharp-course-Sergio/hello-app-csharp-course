@@ -18,5 +18,27 @@ partial class Program
             WriteLine($"Número {number}");
             number++;
         } while (number < 3);
+
+        // for
+        for (int i = 0; i < 5; i++)
+        {
+            WriteLine($"i = {i}");
+        }
+
+        // foreach
+        // Array
+        string[] fruits = ["Apple", "Banana", "Cherry"];
+        foreach (string fruit in fruits)
+        {
+            WriteLine(fruit);
+        }
+
+        // List
+        List<string> vegetables = ["Carrot", "Potato", "Tomato"];
+        foreach (string vegetable in vegetables)
+        {
+            WriteLine(vegetable);
+        }
+
     }
 }
