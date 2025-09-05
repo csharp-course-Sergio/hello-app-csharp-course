@@ -10,8 +10,6 @@ partial class Program
         return number > 0 ? "Positive" : number < 0 ? "Negative" : "Zero";
     }
 
-
-
     static void Functions()
     {
         var area = CalculateArea(4, 2);
