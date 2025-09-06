@@ -19,6 +19,5 @@ partial class Program
             factorial *= i;
             WriteLine($"{i}! = {factorial}");
         }
-
     }
 }
