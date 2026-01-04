@@ -33,18 +33,18 @@ namespace TaskMaster
                 {
                     case "1": queries.ListTasks(); break;
                     case "2": AddTask(); break;
-                    case "3": break;
+                    case "3": MarkAsCompleted(); break;
                     case "4": break;
                     case "5": break;
                     case "6": break;
                     case "7": break;
                     case "8":
                         salir = true;
-                        Console.Clear();
+                        Clear();
                         break;
                     default:
-                        Console.Clear();
-                        Console.WriteLine("Opción no válida. Intente de nuevo.");
+                        Clear();
+                        WriteLine("Opción no válida. Intente de nuevo.");
                         break;
                 }
             }
@@ -60,6 +60,19 @@ namespace TaskMaster
             catch (Exception ex)
             {
                 WriteLine("Ocurrio un error al agregar la tarea: " + ex.Message);
+            }
+        }
+
+        public static void MarkAsCompleted()
+        {
+            try
+            {
+                var tasks = queries.MarkAsCompleted();
+                fileActions.WriteFile(tasks);
+            }
+            catch (Exception ex)
+            {
+                WriteLine("Ocurrio un error al marcar la tarea como completada: " + ex.Message);
             }
         }
     }
