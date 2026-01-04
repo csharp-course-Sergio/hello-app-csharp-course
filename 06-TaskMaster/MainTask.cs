@@ -33,7 +33,7 @@ namespace TaskMaster
                     case "4": EditTask(); break;
                     case "5": DeleteTask(); break;
                     case "6": queries.TaskByState(); break;
-                    case "7": break;
+                    case "7": queries.TaskByDescription(); break;
                     case "8":
                         salir = true;
                         Clear();
