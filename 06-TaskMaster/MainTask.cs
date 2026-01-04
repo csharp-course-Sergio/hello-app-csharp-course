@@ -32,7 +32,7 @@ namespace TaskMaster
                 switch (ReadLine())
                 {
                     case "1": queries.ListTasks(); break;
-                    case "2": break;
+                    case "2": AddTask(); break;
                     case "3": break;
                     case "4": break;
                     case "5": break;
@@ -47,6 +47,19 @@ namespace TaskMaster
                         Console.WriteLine("Opción no válida. Intente de nuevo.");
                         break;
                 }
+            }
+        }
+
+        public static void AddTask()
+        {
+            try
+            {
+                var tasks = queries.AddTask();
+                fileActions.WriteFile(tasks);
+            }
+            catch (Exception ex)
+            {
+                WriteLine("Ocurrio un error al agregar la tarea: " + ex.Message);
             }
         }
     }
