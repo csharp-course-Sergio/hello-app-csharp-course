@@ -16,6 +16,7 @@ namespace TaskMaster
 
             foreach (var task in Tasks)
             {
+                if (task.Deleted) continue;
                 table.AddRow(task.Id, task.Description, task.Completed ? "Completada" : "");
             }
 
@@ -46,6 +47,7 @@ namespace TaskMaster
                 return Tasks;
             }
         }
+
         public List<Task> MarkAsCompleted()
         {
             try
@@ -80,6 +82,7 @@ namespace TaskMaster
                 return Tasks;
             }
         }
+
         public List<Task> EditTask()
         {
             try
@@ -107,6 +110,41 @@ namespace TaskMaster
 
                 ForegroundColor = ConsoleColor.Green;
                 WriteLine("Tarea editada exitosamente.");
+                ResetColor();
+                return Tasks;
+            }
+            catch (Exception ex)
+            {
+                ForegroundColor = ConsoleColor.Red;
+                WriteLine(ex.Message);
+                return Tasks;
+            }
+        }
+
+        public List<Task> DeleteTask()
+        {
+            try
+            {
+                ResetColor();
+                Clear();
+                WriteLine("-----Eliminar tarea-----");
+                Write("Ingrese el id de la tarea a eliminar: ");
+                var id = ReadLine()!;
+
+                Task task = Tasks.Find(t => t.Id == id)!;
+
+                if (task == null)
+                {
+                    ForegroundColor = ConsoleColor.Red;
+                    WriteLine("No se encontró una tarea con el ID proporcionado.");
+                    return Tasks;
+                }
+
+                task.Deleted = true;
+                task.ModifiedAt = DateTime.Now;
+
+                ForegroundColor = ConsoleColor.Green;
+                WriteLine("Tarea eliminada exitosamente.");
                 ResetColor();
                 return Tasks;
             }

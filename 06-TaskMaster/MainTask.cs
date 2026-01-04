@@ -31,7 +31,7 @@ namespace TaskMaster
                     case "2": AddTask(); break;
                     case "3": MarkAsCompleted(); break;
                     case "4": EditTask(); break;
-                    case "5": break;
+                    case "5": DeleteTask(); break;
                     case "6": break;
                     case "7": break;
                     case "8":
@@ -82,6 +82,19 @@ namespace TaskMaster
             catch (Exception ex)
             {
                 WriteLine("Ocurrio un error al editar la tarea: " + ex.Message);
+            }
+        }
+
+        public static void DeleteTask()
+        {
+            try
+            {
+                var tasks = queries.DeleteTask();
+                fileActions.WriteFile(tasks);
+            }
+            catch (Exception ex)
+            {
+                WriteLine("Ocurrio un error al eliminar la tarea: " + ex.Message);
             }
         }
     }

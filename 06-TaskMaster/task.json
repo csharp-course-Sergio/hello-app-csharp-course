@@ -4,7 +4,7 @@
     "Description": "Limpiar el cuarto",
     "Completed": true,
     "CreatedAt": "2024-04-15T00:00:00",
-    "ModifiedAt": "2025-03-10T17:17:56.371587-06:00",
+    "ModifiedAt": "2026-01-04T13:49:05.4413972-06:00",
     "Deleted": true
   },
   {
@@ -13,7 +13,7 @@
     "Completed": false,
     "CreatedAt": "2024-01-15T00:00:00",
     "ModifiedAt": "2024-01-15T00:00:00",
-    "Deleted": true
+    "Deleted": false
   },
   {
     "Id": "3f6c921",
