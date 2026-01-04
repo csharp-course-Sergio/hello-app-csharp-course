@@ -19,7 +19,7 @@ namespace TaskMaster
             {
                 ForegroundColor = ConsoleColor.White;
                 WriteLine("-----Menú de Tareas-----");
-                WriteLine("\n1. Listar tareas");
+                WriteLine("1. Listar tareas");
                 WriteLine("2. Añadir tarea");
                 WriteLine("3. Marcar tarea como completada");
                 WriteLine("4. Editar tarea");
