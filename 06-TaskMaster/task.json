@@ -25,10 +25,10 @@
   },
   {
     "Id": "5eb6cd4",
-    "Description": "Ver One Piece",
-    "Completed": true,
+    "Description": "Pintar el cuarto",
+    "Completed": false,
     "CreatedAt": "2026-01-04T13:28:04.0987457-06:00",
-    "ModifiedAt": "2026-01-04T13:28:04.0987506-06:00",
+    "ModifiedAt": "2026-01-04T13:40:34.8409431-06:00",
     "Deleted": false
   }
 ]

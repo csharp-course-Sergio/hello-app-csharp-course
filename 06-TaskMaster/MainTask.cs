@@ -1,9 +1,5 @@
-using TaskMaster;
-
 namespace TaskMaster
 {
-
-
     partial class Program
     {
 
@@ -34,7 +30,7 @@ namespace TaskMaster
                     case "1": queries.ListTasks(); break;
                     case "2": AddTask(); break;
                     case "3": MarkAsCompleted(); break;
-                    case "4": break;
+                    case "4": EditTask(); break;
                     case "5": break;
                     case "6": break;
                     case "7": break;
@@ -73,6 +69,19 @@ namespace TaskMaster
             catch (Exception ex)
             {
                 WriteLine("Ocurrio un error al marcar la tarea como completada: " + ex.Message);
+            }
+        }
+
+        public static void EditTask()
+        {
+            try
+            {
+                var tasks = queries.EditTask();
+                fileActions.WriteFile(tasks);
+            }
+            catch (Exception ex)
+            {
+                WriteLine("Ocurrio un error al editar la tarea: " + ex.Message);
             }
         }
     }
